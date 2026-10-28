@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>年会抢答 · 加入</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<!-- 加入页 -->
+<div id="joinScreen">
+  <div class="join-card">
+    <h1>年会抢答</h1>
+    <p>输入你的名字，加入实时排行榜</p>
+    <input id="nameInput" type="text" placeholder="你的名字" maxlength="16" autocomplete="off">
+    <button class="btn-primary" id="joinBtn">加入抢答</button>
+  </div>
+</div>
+
+<!-- 游戏页 -->
+<div id="gameScreen" class="hidden">
+  <div class="topbar">
+    <div class="who"><span id="whoName">—</span><small>已加入</small></div>
+    <div class="score"><b id="myScore">0</b><small>我的积分</small></div>
+  </div>
+
+  <div id="questionArea"></div>
+
+  <div id="statusArea"></div>
+
+  <div class="board hidden" id="board">
+    <h3>本题最快前 10 名</h3>
+    <div id="boardList"></div>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/participant.js"></script>
+</body>
+</html>

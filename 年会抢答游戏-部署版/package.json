@@ -1,0 +1,15 @@
+{
+  "name": "annual-quiz",
+  "version": "1.0.0",
+  "private": true,
+  "description": "年会实时抢答网页 - 扫码加入 / 选择题 / 每题最快前10名得分",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "localtunnel": "^2.0.2",
+    "qrcode": "^1.5.3",
+    "socket.io": "^4.7.5"
+  }
+}

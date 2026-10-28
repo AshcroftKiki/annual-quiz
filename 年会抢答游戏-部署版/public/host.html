@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>年会抢答 · 主持端</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div id="host">
+  <div id="localWarn" class="warn hidden">
+    ⚠️ 当前是<b>本地地址</b>，手机扫上面的二维码扫不出来。<br>
+    请双击文件夹里的 <b>「开公网.bat」</b>，用它打开的页面（地址是 <b>https://…loca.lt</b>）再让大家扫。
+  </div>
+  <div class="host-head">
+    <h1>年会抢答 · 主持端</h1>
+    <div class="qr-box">
+      <img id="qr" alt="扫码加入" />
+      <div class="url">
+        <b>参与者扫码加入</b>
+        <span id="joinUrl">—</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="host-grid">
+    <!-- 左：控制 + 题目 -->
+    <div class="panel">
+      <h2>控制 <span class="pill" id="phasePill">准备中</span></h2>
+      <div class="meta-row">
+        <div>已加入：<b id="cnt">0</b> 人</div>
+        <div>本题作答：<b id="ans">0</b> 人</div>
+        <div>进度：<b id="prog">0 / 0</b></div>
+      </div>
+      <div class="controls">
+        <button class="ctrl green" id="btnStart">开始（第一题）</button>
+        <button class="ctrl" id="btnNext">下一题</button>
+        <button class="ctrl orange" id="btnReveal">公布答案</button>
+        <button class="ctrl ghost" id="btnFinish">结束</button>
+        <button class="ctrl ghost" id="btnReset">重置</button>
+      </div>
+      <div id="qRef"></div>
+    </div>
+
+    <!-- 右：实时榜 -->
+    <div class="panel">
+      <h2>实时积分榜 <span class="pill" id="standTitle">前 20 名</span></h2>
+      <div id="standings"><div class="status">暂无数据</div></div>
+    </div>
+  </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/host.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+# Render Blueprint —— 一键部署配置
+# 在 Render 新建 Blueprint 并连上 GitHub 仓库后会自动读取本文件
+services:
+  - type: web
+    name: annual-quiz
+    runtime: node
+    plan: free
+    region: singapore        # 亚洲就近，延迟低
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: "3000"
